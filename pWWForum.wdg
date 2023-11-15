@@ -1,0 +1,288 @@
+#To edit and compare internal_properties, use WINDEV integrated tools.
+#Internal properties refer to the properties of controls in windows, reports, etc.
+info :
+ name : pWWForum
+ major_version : 28
+ minor_version : 0
+ type : 7
+ description : ""
+ subtype : 0
+procedure_set :
+ identifier : 0x1448ac6b00117e76
+ internal_properties : CAAAAAgAAABGLu41kG7fjQV3iS4F72qmnKaNh5694reolNKIW0iw
+ code_elements :
+  internal_properties : CAAAAAgAAAC6INC4zNZpb0fZq8mjK0iKSAH4EBIeapSSbT/DOTOcVjXPyghfpyk1zhWy+HBTuGJl5yj8XuH462kdkfcBKPYlPDL0u019HkxkxEXGuK8PykTIi61exE0nMaub/zP9JVMagR8zFqGEDDRX/PPUq/f08B1LpDujuCMLuH5zr1uVAU71Ic0ptRvE7TodAcfKGsY2xbJNWyReKS0ZGGmV5hMgf93D7EJKEO7WMKgS/KojtPPG4Mu4c3pu2dTkf/LZpwtv1a1BsdEiqHSNUb8CZMVSK7v+Te5UB5BJnuhvoWp6jV7jXwXNQ9vvJaXu/8Id1abGK3xhfeBiMNibICxYqMTkLfce8F+agFB2tZlYfK6P1ZnT5DR7jQsknWwF46b1hi4+O1U9ys4Z
+  type_code : 31
+  p_codes : []
+  procedures :
+   -
+     name : UtilisateurConnecté
+     internal_properties : CAAAAAgAAABm2OlW+xd/K+T4OFKLGrGRi459Q63a6gwRYIj2cUZVBO6S/OpfBF1+xjAlBUyQT+s82hRx2Cpeq/f/W7GBn9Y5LKw0QcLmNrHz0BpSsr9GhSveznN5XpszwHpuZDkVUz7L1JpjkccHHmyBICLh0H2AFGDEv2GrJefhBvaTBmdgdaJQie109J0xsQvjRb0wWuBUnI3WAsH7IDa/C6ZAYMGCyotObRqy0qLfroQWjvzsVK36DKV6/lG5f6Lr3KT2Eqx0Ho8SoqyRs1jIC1OVQQI+Kw5UgI8KnPxAsoRMuq984mysqUQct3+KZLmjGBBFPvKdEeCCq77AVPhlJaAJNPfZn67Fsf0bN7N81Xv6vvakyqLPj1ILN+0bUFDs08mUAYgeKzshichrEM8i38W9bretbfU=
+     procedure_id : 1461646390957317374
+     type_code : 15
+     code : |1+
+      // Résumé : Indique si l'utilisateur est connecté
+      // Syntaxe :
+      //[ <Résultat> = ] UtilisateurConnecté ()
+      //
+      // Paramètres :
+      //	Aucun
+      // Valeur de retour :
+      // 	booléen : Vrai si l'utilisateur est connecté
+      //
+      
+      Procédure UtilisateurConnecté()
+      
+      	SI gnIDUtilisateur <> -1 ALORS
+      		Renvoyer Vrai
+      	SInon
+      		RENVOYER FAUX
+      	FIN
+     type : 458752
+   -
+     name : UtilisateurDéconnecte
+     internal_properties : CAAAAAgAAAAAoT2odkKKZi+iaKm0N6OuVjkQRIlSIEdM5wwyrpYdlKKG/LpyWri1/c4EwGhQq0sbtISjDuQcL+e+b5emZpmkF8coFEQRgu50iehdgjn6R41z7tXmhCiSS78d5GsCMCDMgChxrYZxwFRzYPVhiUfayfQEmnFgpb9UIllkHNJjm7K2pvGZrXkeymm0wk3XWh8MuLf04KdSmwuXXaN3NeD3NB7uirf56sSw6MxFc8uHtYGdkA7dCh1Z3nKTRGzF3/a35t7kYEAehtf+yCGVRxUyDWopIrODTOPo2DRuFGGsK0pNJu/THQTL3R2Xupo1+ZFThGieU6vQbteOIky7jvRGVQxeOx0S3Te/hdluQs4xS0so9uDbZ2tcFZ5H/RnAhXUT1L+C3Om5zxLe1LfAvfFoA2Dt2g==
+     procedure_id : 1461646541281798089
+     type_code : 15
+     code : |1-
+      // Résumé : Déconnecte l'utilisateur
+      // Syntaxe :
+      //UtilisateurDéconnecte ()
+      //
+      // Paramètres :
+      //	Aucun
+      // Valeur de retour :
+      // 	Aucune
+      //
+      
+      Procédure UtilisateurDéconnecte()
+      
+      	// Déconnecte l'utilisateur
+      	Si UtilisateurConnecté() ALORS
+      		HLitRecherchePremier(Utilisateur,IDUtilisateur,gnIDUtilisateur)
+      		Utilisateur.EnLigne = Faux
+      		HModifie(Utilisateur)
+      		gnIDUtilisateur = -1
+      	FIN	
+      
+      	
+      	
+      	
+      	
+     type : 458752
+   -
+     name : UtilisateurAutorisé
+     procedure_id : 1462692434576371733
+     type_code : 15
+     code : |1+
+      // Résumé : Indique si l'utilisateur a les droits Administrateur
+      // Syntaxe :
+      //[ <Résultat> = ] UtilisateurAutorisé ()
+      //
+      // Paramètres :
+      //	Aucun
+      // Valeur de retour :
+      // 	booléen : Vrai si l'utilisateur a les droits Administrateur
+      //
+      
+      Procédure UtilisateurAutorisé()
+      	
+      	SI UtilisateurConnecté() ALORS
+      		HLitRecherchePremier(Utilisateur,IDUtilisateur,gnIDUtilisateur)
+      		SI HTrouve ALORS
+      			SI Utilisateur.Administrateur ALORS
+      				RENVOYER Vrai
+      			SINON
+      				RENVOYER Faux
+      			FIN
+      		SINON
+      			RENVOYER Faux
+      		FIN
+      	SINON
+      		RENVOYER Faux
+      	FIN
+     type : 458752
+   -
+     name : UtilisateursStatistiques
+     internal_properties : CAAAAAgAAABBYgJVE91zn4oULSdtDBCvmlmB8HbOpUBJ0nF5UYta0TQcbGtFYhhUroFXuVMr7ak3w3zeNeklNzkSTd5mdDX87OKDIzGuvR0BdPvq85ZrSJDuFdhbKRuBvDassVQPeQHjIwdshrfY3+3Ck1LCbqiT+LYVbxXTcAg0arMgc9aZlhfbF35IVL5LmRbhGbTerZpl+W9Y1EOirw9L8zHxq44hXjjIRvE3OlRQPDL9VSHnBc+TSsqLw8+DpaTsTnLT9ad4187ydMSo0F2EoC8F9+sUGS6l5LOzYrFKUkg4cD3e2RaR4qEjTTL5H/df6Iplz+uH0PCqvuEBZn8HXA1R5m7ae0kti8RYq0/LJdNmgI3398cPhDNOZBYPztdAxOT9sVHO68v9++p4VLTWw4p7+qJbMh8sGw==
+     procedure_id : 1462706753959317209
+     type_code : 15
+     code : |1+
+      // Résumé : Renvoi les statistiques sur le nombre de membres et de messages
+      // Syntaxe :
+      //[ <Résultat> = ] UtilisateursStatistiques (<bNbMembres>)
+      //
+      // Paramètres :
+      //	bNbMembres : Vrai pour récupérer le nombre de membres enregistrés, Faux pour récupérer le nombres de messages
+      // Valeur de retour :
+      // 	entier sur 8 octets : Total demandé
+      //
+      Procédure UtilisateursStatistiques(bNbMembres)
+      
+      	si bNbMembres ALORS
+      		// Renvoie le nombre d'utilisateurs
+      		renvoyer hnbenr(Utilisateur) - 1
+      	sinon
+      		// Renvoie le nombre de messages
+      		renvoyer hnbenr(Message)
+      	FIN
+      
+     type : 458752
+   -
+     name : ParseMessage
+     internal_properties : CAAAAAgAAAAXhhrj9Yxl5CnaQp7Yc0Jah00Rh1crKtoz8+qF3A/tVWFWF3U27c9C8UHzekpMe9dts3HXq9gOGU5Rbc4E3MNMiCk4KZVB9Kbsu5M1lisjmlERjZJF+lf8xKmKm46s15ssb/TPRcP+7AcUPB+otXt5Cx7Thuq4zq1mkS+on2UgbYDWSkADQXbzW5X9KlW6cU3hvTV0VeCCS+U/OQswaEAlItpjhozdWabP3TyDy44gAe3sji9fxE31POQ7NQ5Z59uYWojhmpB0a+h0oi+wsW6oPGrPkuUnktygNXcCBoVVSfVG/WrWwW0ssWlAToRDBgEQVnNaxzdy9Mst8ZHB/S1RccqZIS7MTAekMIntTxpFjjD6hTm6T7LJI/OQC/iAdtwoC5ZBALZAiFBwtX8P0n1C/XH0ddpNNG9envbSDpR7j7KobYpc+PnCzKlgISIrXiu33yHbB4mrECFFCLd5CZXR7Ph150i3tk0b6uTGT55dZc0O3POTy9MAyD3mj0dPWnonVoGWsC2M8F1MzxUvbpjzFOEvoXy/uZBDpPSEZRpm8eoe6o9bDzeTbTyKtuMUIF4WX4cFARmRgdpYaWCHlwKT6sHhCXzEGB0=
+     procedure_id : 1462758413882087459
+     type_code : 15
+     code : |1+
+      // Résumé : <indiquez ici ce que fait la procédure>
+      // Syntaxe :
+      //[ <Résultat> = ] ParseMessage (<sContenuParsé>, <sSignature>)
+      //
+      // Paramètres :
+      //	sContenuParsé : Contenu texte à parser
+      //	sSignature : Signature à ajouter
+      // Valeur de retour :
+      // 	Type indéterminé : Message complet formaté
+      //
+      Procédure ParseMessage(sContenuParsé, sSignature)
+      	// Formatage
+      	
+      	// EMOTICONES **********************************************************
+      	sContenuParsé = remplace(sContenuParsé, "&lt;_&lt;", 		"<img src=""/" + repertoireweb() + "/images/smileys/dry.gif"" width=""20"" height=""20"" align=""absmiddle"">")
+      	sContenuParsé = remplace(sContenuParsé, ":(", 		"<img src=""/" + repertoireweb() + "/images/smileys/sad.gif"" width=""20"" height=""20"" align=""absmiddle"">")
+      	sContenuParsé = remplace(sContenuParsé, ":)", 		"<img src=""/" + repertoireweb() + "/images/smileys/smile.gif"" width=""20"" height=""20"" align=""absmiddle"">")
+      	sContenuParsé = remplace(sContenuParsé, ":D", 		"<img src=""/" + repertoireweb() + "/images/smileys/biggrin.gif"" width=""20"" height=""20"" align=""absmiddle"">")
+      	sContenuParsé = remplace(sContenuParsé, ":P", 		"<img src=""/" + repertoireweb() + "/images/smileys/tongue.gif"" width=""20"" height=""20"" align=""absmiddle"">")
+      	sContenuParsé = remplace(sContenuParsé, ":angry:", 	"<img src=""/" + repertoireweb() + "/images/smileys/mad.gif"" width=""20"" height=""20"" align=""absmiddle"">")
+      	sContenuParsé = remplace(sContenuParsé, ":blink:", 		"<img src=""/" + repertoireweb() + "/images/smileys/blink.gif"" width=""20"" height=""20"" align=""absmiddle"">")
+      	sContenuParsé = remplace(sContenuParsé, ":huh:", 		"<img src=""/" + repertoireweb() + "/images/smileys/huh.gif"" width=""20"" height=""20"" align=""absmiddle"">")
+      	sContenuParsé = remplace(sContenuParsé, ":lol:", 		"<img src=""/" + repertoireweb() + "/images/smileys/laugh.gif"" width=""20"" height=""20"" align=""absmiddle"">")
+      	sContenuParsé = remplace(sContenuParsé, ":o", 		"<img src=""/" + repertoireweb() + "/images/smileys/ohmy.gif"" width=""20"" height=""20"" align=""absmiddle"">")
+      	sContenuParsé = remplace(sContenuParsé, ":ph34r:", 	"<img src=""/" + repertoireweb() + "/images/smileys/ph34r.gif"" width=""20"" height=""20"" align=""absmiddle"">")
+      	sContenuParsé = remplace(sContenuParsé, ":rolleyes:", 	"<img src=""/" + repertoireweb() + "/images/smileys/rolleyes.gif"" width=""20"" height=""20"" align=""absmiddle"">")
+      	sContenuParsé = remplace(sContenuParsé, ":unsure:", 	"<img src=""/" + repertoireweb() + "/images/smileys/unsure.gif"" width=""20"" height=""20"" align=""absmiddle"">")
+      	sContenuParsé = remplace(sContenuParsé, ";)", 		"<img src=""/" + repertoireweb() + "/images/smileys/wink.gif"" width=""20"" height=""20"" align=""absmiddle"">")
+      	sContenuParsé = remplace(sContenuParsé, "B)", 		"<img src=""/" + repertoireweb() + "/images/smileys/cool.gif"" width=""20"" height=""20"" align=""absmiddle"">")
+      	// EMOTICONES **********************************************************
+      	sSignature = Remplace(sSignature, "&lt;_&lt;", 		"<img src=""/" + RépertoireWeb() + "/images/smileys/dry.gif"" width=""20"" height=""20""  align=""absmiddle"">")
+      	sSignature = Remplace(sSignature, ":(", 		"<img src=""/" + RépertoireWeb() + "/images/smileys/sad.gif"" width=""20"" height=""20""  align=""absmiddle"">")
+      	sSignature = Remplace(sSignature, ":)", 		"<img src=""/" + RépertoireWeb() + "/images/smileys/smile.gif"" width=""20"" height=""20""  align=""absmiddle"">")
+      	sSignature = Remplace(sSignature, ":D", 		"<img src=""/" + RépertoireWeb() + "/images/smileys/biggrin.gif"" width=""20"" height=""20""  align=""absmiddle"">")
+      	sSignature = Remplace(sSignature, ":P", 		"<img src=""/" + RépertoireWeb() + "/images/smileys/tongue.gif"" width=""20"" height=""20""  align=""absmiddle"">")
+      	sSignature = Remplace(sSignature, ":angry:", 	"<img src=""/" + RépertoireWeb() + "/images/smileys/mad.gif"" width=""20"" height=""20""  align=""absmiddle"">")
+      	sSignature = Remplace(sSignature, ":blink:", 		"<img src=""/" + RépertoireWeb() + "/images/smileys/blink.gif"" width=""20"" height=""20""  align=""absmiddle"">")
+      	sSignature = Remplace(sSignature, ":huh:", 		"<img src=""/" + RépertoireWeb() + "/images/smileys/huh.gif"" width=""20"" height=""20""  align=""absmiddle"">")
+      	sSignature = Remplace(sSignature, ":lol:", 		"<img src=""/" + RépertoireWeb() + "/images/smileys/laugh.gif"" width=""20"" height=""20""  align=""absmiddle"">")
+      	sSignature = Remplace(sSignature, ":o", 		"<img src=""/" + RépertoireWeb() + "/images/smileys/ohmy.gif"" width=""20"" height=""20""  align=""absmiddle"">")
+      	sSignature = Remplace(sSignature, ":ph34r:", 	"<img src=""/" + RépertoireWeb() + "/images/smileys/ph34r.gif"" width=""20"" height=""20""  align=""absmiddle"">")
+      	sSignature = Remplace(sSignature, ":rolleyes:", 	"<img src=""/" + RépertoireWeb() + "/images/smileys/rolleyes.gif"" width=""20"" height=""20""  align=""absmiddle"">")
+      	sSignature = Remplace(sSignature, ":unsure:", 	"<img src=""/" + RépertoireWeb() + "/images/smileys/unsure.gif"" width=""20"" height=""20""  align=""absmiddle"">")
+      	sSignature = Remplace(sSignature, ";)", 		"<img src=""/" + RépertoireWeb() + "/images/smileys/wink.gif"" width=""20"" height=""20""  align=""absmiddle"">")
+      	sSignature = Remplace(sSignature, "B)", 		"<img src=""/" + RépertoireWeb() + "/images/smileys/cool.gif"" width=""20"" height=""20""  align=""absmiddle"">")
+      
+      	si sSignature <> "" alors
+      		// Parse la signature
+      		sContenuParsé += "<BR>" + rc + "--------------------<BR>" + rc + sSignature
+      	fin
+      renvoyer sContenuParsé
+     type : 458752
+   -
+     name : PageAffichePrecedente
+     internal_properties : CAAAAAgAAAAeL7E7v5DWjV5ur7jXTbPuaDXaJRr34ehFv5rkaDVAD6Zf1Umfmylo8dJbWaBk5gHUT2GgWtwLHolxTrClBEO2k4GJnv5kCSjx+nCLuTRZbv1SsYib1mk6SKKHINmsOYAtooDD+N2+l9BSOqHF
+     procedure_id : 2030476060139368208
+     type_code : 15
+     code : |1+
+      // Résumé : Affiche la page précédente
+      // Syntaxe :
+      // PageAffichePrecedente ()
+      //
+      PROCEDURE PageAffichePrecedente()
+      
+      si gsQueryString<>"" ALORS	
+      	tabParams est un tableau de chaine
+      	ChaîneVersTableau(gsQueryString,tabParams,"&")
+      	//prend la partie VALEUR du paramètre (et retire donc le NOM) => p1=Valeur1
+      	pour i = 1 _a_ tabParams..Occurrence
+      		tabParams[i] = ExtraitChaîne(tabParams[i],2,"=")
+      	FIN
+      	selon tabParams..Occurrence
+      		cas 1
+      			PageAffiche(gsPagePrécédente,tabParams[1])
+      		cas 2
+      			PageAffiche(gsPagePrécédente,tabParams[1],tabParams[2])
+      		cas 3
+      			PageAffiche(gsPagePrécédente,tabParams[1],tabParams[2],tabParams[3])
+      		cas 4
+      			PageAffiche(gsPagePrécédente,tabParams[1],tabParams[2],tabParams[3],tabParams[4])
+      		AUTRE CAS
+      			finprogramme("trop de paramètres")
+      	FIN
+      SINON
+      	PageAffiche(gsPagePrécédente)	
+      FIN
+     type : 458752
+   -
+     name : InitialiseDonnées
+     internal_properties : CAAAAAgAAADDhKfm7KnQpA2V8AjazVi1MEFQ4MWuLEQ8egcpnAlqjAT9JJ6cuwGK7QFQcrpsDb7QfIQ0ycmKw3fJzq0xKQspemuk08fYgTGLL16gaVK9zxiRw2j3yHTCZxZZxj9kAY9c6ECehD+2rl+Gq08W9Ewu5v+cG5CjKwFfSHU8EwVy2uyUkTLYjsP6NbeEDas/No9SJAVXiWdS1aX5kopPOirfAVRUj3q+fEL/J2oxIXNM4rwrOhAk
+     procedure_id : 2099250804492583737
+     type_code : 15
+     code : |1-
+      PROCEDURE InitialiseDonnées()
+      bNouveau est un booléen
+      
+      HLitRecherchePremier(Utilisateur,Login,<§@1448a7690009ed5e0005§>)	
+      SI HTrouve(Utilisateur) = Faux ALORS
+      	bNouveau = Vrai
+      FIN
+      
+      
+      SI bNouveau ALORS
+      	// Création de l'utilisateur système
+      	Utilisateur.Administrateur = Vrai
+      	Utilisateur.Avatar = "../images/avatar/user.png"
+      	Utilisateur.Email   = "info@forum-webdev.net"
+      	Utilisateur.EnLigne = Faux
+      	Utilisateur.Login   = <§@1448a7690009ed5e0001§>
+      	Utilisateur.MotDePasse = <§@1448a7690009ed5e0002§>
+      	Utilisateur.DateCreation = "19800101000000"
+      	Utilisateur.Signature = <§@1448a7690009ed5e0004§> + RC
+      	Utilisateur.TotalMessage = 0
+      	HAjoute(Utilisateur)
+      FIN
+     type : 458752
+  procedure_templates : []
+  property_templates : []
+ code_parameters :
+  internal_properties : CAAAAAgAAACVGQgYbalU7DKC3oH4ItDrjtcTHXXV/EuH8q0IbhyQlw==
+  original_name : COL_Collection1
+resources :
+ string_res :
+  identifier : 0x1448a7690009ed5e
+  internal_properties : CAAAAAgAAACm76HWfKGWp33VjXInA4cRlqArlgTTA862QGt72W2ld5Y=
+  strings :
+   -
+     text :
+      fr-FR : Vous devez être identifié et posséder les droits d'administration pour effectuer cette opération
+     index : 0
+   -
+     text :
+      fr-FR : Administrateur
+     index : 1
+   -
+     text :
+      fr-FR : demo
+     index : 2
+   -
+     text :
+      fr-FR : "\"<font size=\"2\"><span style=\"font-family: Arial,Helvetica,sans-serif;\">WEBDEV : Forums, réalisés avec <span style=\"font-weight: bold;\">WEBDEV </span>de PC SOFT.\" "
+     index : 3
+   -
+     text :
+      fr-FR : "<font size=\"2\"><span style=\"font-family: Arial,Helvetica,sans-serif;\">WEBDEV : Forums, réalisés avec <span style=\"font-weight: bold;\">WEBDEV </span>de PC SOFT."
+     index : 4
+   -
+     text :
+      fr-FR : Administrateur
+     index : 5
+custom_note :
+ internal_properties : CAAAAAgAAABtB9HWVzrXO2+4NDRVK0vmzaNKrCKqH1DBX30lMmGZ

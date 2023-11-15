@@ -1,0 +1,97 @@
+#To edit and compare internal_properties, use WINDEV integrated tools.
+#Internal properties refer to the properties of controls in windows, reports, etc.
+info :
+ name : pForum
+ major_version : 28
+ minor_version : 0
+ type : 65539
+ description : ""
+ subtype : 0
+procedure_set :
+ identifier : 0x1448ac65001065be
+ internal_properties : CAAAAAgAAABGLu41kG7fjQV3iS4F72qmnKaNh5694reolNKIW0iw
+ code_elements :
+  internal_properties : CAAAAAgAAADxVFcuaeHUfbgz12RIvTDwuxFZ0Dv3JnKk+ceAXX7gyj853QyqB7Y1qzKO+M5voBvID5GMD6X2sEZ0mjcdaP9O4UOWjOxHZD54GIG4G/rFSPKN9LcWcZiisivoEVIwDFgTpvCkJXouajKnUffixQ==
+  type_code : 41
+  p_codes :
+   -
+     type : 983040
+     role : N
+   -
+     type : 983042
+     role : N
+  procedures :
+   -
+     name : VerifEmail
+     internal_properties : CAAAAAgAAADSVOBZT06B96IOJ53D9T0k2LaFZ5WxdNy82//e69Kdd6N54Wf0gNuNpXYF2olsMp+594NVknNw0oVJfUdWjCm0neewgwHbAiSjkeIu9sp/1qBDHCbng1j6xLhT4ktYzvPeUR/o
+     procedure_id : 1821659251455876313
+     type_code : 15
+     code : |1+
+      // Résumé : Vérifie que l'utilisateur a saisi un format de mail valide
+      // Syntaxe :
+      //[ <Résultat> = ] VerifEmail (<sEmail>)
+      //
+      // Paramètres :
+      //	sEmail : l'adresse mail saisie par l'utilisateur
+      // Valeur de retour :
+      // 	Booléen : Vrai si l'adresse est valide
+      //
+      
+      PROCEDURE VerifEmail(sEmail)
+      
+      // on vérifie que l'utilisateur a saisi un format de mail valide
+      // renvoie 1 si format correct, 0 sinon 
+      
+      nLongAro		est un entier       // position de @
+      nLongLastPoint 	est un entier 		// position du dernier point
+      sUtilisateur  	est une chaine    	// ce qui est avant le @
+      sServeur	 	est une chaine    	// ce qui est entre le @ et le dernier point
+      sPays         	est une chaine    	// ce qui est après le dernier point
+      
+      // position de @ 
+      nLongAro = Position(sEmail,"@")
+      // pas de @
+      SI PAS nLongAro ALORS RENVOYER Faux
+      // plusieurs @
+      SI Position(sEmail[[nLongAro+1 A Taille(sEmail)]], "@")<>0 ALORS RENVOYER 0
+      
+      // calcul de la position du dernier point
+      i est un entier =1
+      // on cherche le dernier point de la chaine située après @
+      TANTQUE ExtraitChaîne(sEmail[[nLongAro+1 A Taille(sEmail)]], i, ".") <> EOT
+      	sPays=ExtraitChaîne(sEmail[[nLongAro+1 A Taille(sEmail)]], i, ".")
+      	i++
+      FIN
+      // pas de .
+      SI i=1 ALORS RENVOYER Faux
+      // position du dernier point
+      nLongLastPoint=Taille(sEmail)-Taille(sPays)
+      
+      // on extrait la partie utilisateur  
+      sUtilisateur = sEmail[[1 A nLongAro -1]]
+      // on extrait la partie serveur
+      sServeur	= sEmail[[nLongAro+1 A nLongLastPoint-1]]
+      
+      SI (Taille(sUtilisateur) = 0 OU Taille(sServeur) = 0) ALORS 
+      	RENVOYER Faux
+      FIN
+      
+      SI (Taille(sPays) <2 OU Taille(sPays) >3) ALORS
+      	RENVOYER Faux
+      FIN
+      
+      RENVOYER Vrai
+      
+     type : 458752
+     role : N
+  procedure_templates : []
+  property_templates : []
+ code_parameters :
+  internal_properties : CAAAAAgAAACVGQgYbalU7DKC3oH4ItDrjtcTHXXV/EuH8q0IbhyQlw==
+  original_name : NAV_CollectionNavigateur1
+resources :
+ string_res :
+  identifier : 0x1fe1bf6b003fa29c
+  internal_properties : CAAAAAgAAACm76HWfKGWp33VjXInA4cRlqArlgTTA862QGt72W2ld5Y=
+custom_note :
+ internal_properties : CAAAAAgAAABtB9HWVzrXO2+4NDRVK0vmzaNKrCKqH1DBX30lMmGZ

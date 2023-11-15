@@ -1,0 +1,452 @@
+#To edit and compare internal_properties, use WINDEV integrated tools.
+#Internal properties refer to the properties of controls in windows, reports, etc.
+info :
+ name : WW_Forum_PHP
+ major_version : 28
+ minor_version : 0
+ type : 4097
+ description : WW_Forum_PHP
+ subtype : 0
+project :
+ identifier : 0x0
+ internal_properties : CAAAAAgAAADXvE+5oJtPSngaSWvI4sTkU2bZ4KN9G/b20JsOSC4r87YbsZ9VCwjU1s2368B8HSALuPtYpFRnJ+jG3IKgUcvvxYCNDYXSRmiGy484ph47V0hLyHIlN248QogtSbMi098pUjbep8iWmntkRgDr2l9ftubRpaaT+c6smbcYSbGNU+Lx8t4ql11dglOxCeJbZKmXWvRFhb3ko0J9NjIuG6kDbq/G0F4F/nIAl4OO5Gh1Yl3vfpRQ8GzBQYLrMtj82hz14BUWwW4ZeaO8HxrX5UiJsR7NBb3+T4qcVoImgkb9yIqk+dUweD74Sov9ghADYt6RltPZjZWrZZ5k53oI29hWOrNAYWJGoD51JCX3OgSzM3cBKXUPESbVaQhDb2Tsd1PT1/55E+5W8H3d1Xk1iRBUAt+/Ujo4OZNgtWp7gg8ZKUv7SIox4A/d1RVobFtk6Hca/lCzrSTxogr9xIofMBn+02763akhHRZOVFS6wt5m6P0rqKge29S8xDFAqsYZ0+Z2hrhESQRrO1aWNGAMuYnnBoRBFDfU1Ja7xorY22EfiPJ5r6K9PwkJZ7N45KyO2k6eD/fSbHqguYzRNhCQLYQ8MAHMBnzOFVWzWfpcELzAjCACcaiPmfKzlF7mVyvA/moccv6lsnCDntGBqtWNAnC7t5QwlmuVUkQQy9wI/l0b59hQ56Jbbg32oFnfNxKOk0Ba1kEa8+soMi0qe6A5JCTPZ9aX/CY1I40ipK/614eGi+nNPYeie2zWX3iA9XmEW/Itl8GJI0TifrGfMzre66gtgIglZUFgamVYEVhC/l2mpi0022GKAE93hz9utBR9h5J1xRWtB4btnj0Sfzo+2F/kbItl0xdpjL0SqAaQ0AAem73G9ZOLk1BFr1Z1PG/j6/fEQksWoKB+8gXQj4z1cuxMe/Zkhd61PhWsBgfzCAWbTx9yxOyuFshq8ajK8tuyj2WBtOxOTF2QJkrvfF+MbsFAmnaKzj0LrYrFMJNPzFI3nLE7G68alLI+GOj7tO08bFdCNgq86qDQIyr/2UhYPTdcQrcapAJxwSbBWnkB0h3jMxRtEdyKWmyR+EJSujQpaWLD08AvXA+9Oeai8r1NdB3+i9LB0VmuOuilJRWBgojEzhHwsH5THpn+iTWaFhzr2+b2YSgAWuALWhXVdecJnem25MmX5250+s4zq8vULUg50g4Mt3W6+bF4dyLBiw3NPO1ZkX+d0YtwPlWdpFGfFEyFpRGrPJLDmHfmjVVvNE75c7MNUYzn7QYY2BZSPUAa4Rof0ofhd1M94wpN1m1L+mvh6sVwdnkLrOeLnf3yCvyPFi6LK8nDKpUgITkFvyAhwVlooB/6Fxc0yc/6mM8loU4P+PgAdAEGmSK5pmFj/uKwvfChI9To8un0x5zaogO9PqZMWP9P8PI4GqaYFEkBmyDiRTUoAFndvAvL+tiFH6jwgBbfOTnkWn+iSg1sldTwVFcbZi1/ngUza4f0rC7lBROSMNBUCIy7fQGoMyHepqkYTtDpwKRrA7VAiRTbwJldECfIGTJruDrAgmmRwV9SF34eiV0lGFh9PEMAEGrssJrnhXX8Uf/5ul1wCftJHKYrj6PtLxE5WprJohtz/IHSwEWNNZK03LZpEwpLOgqzR2Fc9ZHrZJOE4YTHwajdV8+rME2di+PNehmx7OPx1xaRujl7wraoSskSTmmY975FAnH+XShJAgE872uds6/bVyIanIMmBdGsjwDLoioih+N/L6XfkAHu2Bb8S+mM54ZF6k0zR6YZJ2SXniiLsKaigl9EkL+6aKYFE/D3PcYxiecyGmjaOfcXRROpDrAQgv3/y8odqzz1mvx7Sek+DL/EOYGwZfMdu19XPArDah6tv7xTJMl2J3q8MjltETio2epU3xxHa8W4ejszw+RlRUAi2xIY3mwwLi2PcB6tmX6e9Hv8NZUCTzUnI3kwuAfBVzj1VS6Wd3VouuK8qCIO2+xcN7ULqEs=
+ configurations :
+  -
+    name : WW_Forum_PHP
+    internal_properties : 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
+    configuration_id : 6286753784190770031
+    type : 2
+    generation_name : WW_Forum_PHP.wdl
+    version : {}
+    index_page_generation_name : PAGE_Accueil
+    language : 1
+    64bits : true
+ elements :
+  identifier : 0x4ab37b2c00372b1a
+  elements :
+   -
+     name : PAGE_Accueil
+     identifier : 0x4448b7ba0000ac76
+     internal_properties : CAAAAAgAAAAT70tfbNlRCtX0BEE3IzYSK7ryekdP3LZ2YSuMrEhClqZeCIqRaAx7cqwW4qJeGo52/g==
+     physical_name : .\PAGE_Accueil.wwh
+     type : 65538
+   -
+     name : PAGE_Membre
+     identifier : 0x444ca90c00005b2e
+     internal_properties : CAAAAAgAAADpZdE18q8HKDcSJueVCjiQBUbA0PsvPIpzI5oPKcvLdbNJfXW7Bq6dUMo0jBTMtCTsdA==
+     physical_name : .\PAGE_Membre.wwh
+     type : 65538
+   -
+     name : PAGE_Login
+     identifier : 0x4448cf880000a703
+     internal_properties : CAAAAAgAAADRLQkdqtdfEN/KDk8tc3BY+ZQw4GlJ7GyKPAeIvFi6ZoKexL5jXgZ1eKIc5Kwk3Mw0PA==
+     physical_name : .\PAGE_Login.wwh
+     type : 65538
+   -
+     name : PAGE_EditerMembre
+     identifier : 0x444ccce800006f4a
+     internal_properties : CAAAAAgAAADmbM7S0Y6mSRYxsRJgt7EpLm11LRLWPqiqQKZmRKD8JNx2FvwgmTsoL+nTLfXrlwnzcw==
+     physical_name : .\PAGE_EditerMembre.wwh
+     type : 65538
+   -
+     name : PAGE_Topic
+     identifier : 0x444c89120001701e
+     internal_properties : CAAAAAgAAABIxrBsWwAoMzzrL+ySCruH1FXTizJGXm9cSeCpJe8t+zXt/4OuC6mWWcM9u3t1DYNN1Q==
+     physical_name : .\PAGE_Topic.wwh
+     type : 65538
+   -
+     name : REQ_MessagesComplet
+     identifier : 0x444cbfc900012a98
+     internal_properties : CAAAAAgAAAA8GhQAv+TM3+i32zh+d/Mn7I+rc0ckbyBWbT7/J2C0VPgmotBSr1XCtW9pV98R6d8pKQ==
+     physical_name : .\REQ_MessagesComplet.WDR
+     type : 5
+   -
+     name : REQ_StatsUtilisateur
+     identifier : 0x4451cf5b000067b0
+     internal_properties : CAAAAAgAAAAKAHIWldJaBcK9PZ6cFlmZdns15VPI05dCjucePEtB522RF2u0Dbekq5UP6akn08UPFw==
+     physical_name : .\REQ_StatsUtilisateur.WDR
+     type : 5
+   -
+     name : PAGE_EditerTopic
+     identifier : 0x444cc37900029351
+     internal_properties : CAAAAAgAAAABfXmtGkfvgE86vh8diNR8VdKYGL/LRzahTQ71y3mdQ8Vvf/MzjjYlKBKMdDy0TLwEDA==
+     physical_name : .\PAGE_EditerTopic.wwh
+     type : 65538
+   -
+     name : PAGE_Forum
+     identifier : 0x4cda9aab0024bfca
+     internal_properties : CAAAAAgAAACoppCMO2BIUxwLTwxybtsPxPWje9L+8zxIrnvN4VO5X+EBi+dOq0k2OePd21uVbWOttQ==
+     physical_name : .\PAGE_Forum.wwh
+     type : 65538
+   -
+     name : pWWForum
+     identifier : 0x4448a7690000ed5e
+     internal_properties : CAAAAAgAAACX8/8jgP21tgHgIO2TCM6yWwQmpglJf3N2ISqFo5GNS/kHo2+1DKiXXtjCPsY6xjqCgg==
+     physical_name : .\pWWForum.wdg
+     type : 7
+   -
+     name : pAjoutSuppression
+     identifier : 0x4c1899c80024afe0
+     internal_properties : CAAAAAgAAABq4FK2dTJ6paJdXb786ulR9pvFhUvBS2JOK0S7sG+ta5mlw0/ULddECzWvCYlHM6Vv9w==
+     physical_name : .\pAjoutSuppression.wdg
+     type : 7
+   -
+     name : PAGE_EditerMessage
+     identifier : 0x444cc3a400033be5
+     internal_properties : CAAAAAgAAACyiOo+DXoybUpVZabUUwVV8qH5UVY6+Eeps8k6ADRgmKCiyrh8Re9cEw33wUG/uy2Xnw==
+     physical_name : .\PAGE_EditerMessage.wwh
+     type : 65538
+   -
+     name : PAGE_ResultatRecherche
+     identifier : 0x491af1b70005500e
+     internal_properties : CAAAAAgAAAD1Ud3B/lvTjFsmSgtpubDYDbyEDE4DzyZKZCKXc5YE3GSMHtRXokIxJB6YYCDQqBjgYA==
+     physical_name : .\PAGE_ResultatRecherche.wwh
+     type : 65538
+   -
+     name : PAGE_EditerForum
+     identifier : 0x44490a5500006e8f
+     internal_properties : CAAAAAgAAAAcenSgH0Ts/0hXe1jen1MXrB97s/T9mHt24QvHDAgM/PDO2rhyT/ViFQ+Jdz+xSb8JCQ==
+     physical_name : .\PAGE_EditerForum.wwh
+     type : 65538
+   -
+     name : REQ_Recherche
+     identifier : 0x491b016e0000b576
+     internal_properties : CAAAAAgAAACa8EJGZSKKlVJNjc6sDsl5BntVVf2ODulKLJh6xqPp39Upv0Pk3Yf0+yWfGZlXI5V/hw==
+     physical_name : .\REQ_Recherche.WDR
+     type : 5
+   -
+     name : PAGE_Accueil_Mobile
+     identifier : 0x4ceaacb2014a9853
+     internal_properties : CAAAAAgAAAA+JBYKuebO4e6ZqWoI24m5ZmXN5eK0bItIBuTA2DRYSLgKggA4gSMQx3FrVd0T7+ErKw==
+     physical_name : .\PAGE_Accueil_Mobile.wwh
+     type : 65538
+   -
+     name : PAGE_Login_Mobile
+     identifier : 0x4cebc4590020aad4
+     internal_properties : CAAAAAgAAACxjek9Crf/MD/qLu+N4eScwbA4cF1g7RCKvLPJJsbMPIxkZiwD/qaVWMI8hAzEvCyUnA==
+     physical_name : .\PAGE_Login_Mobile.wwh
+     type : 65538
+   -
+     name : pForum
+     identifier : 0x4448a7690001ef33
+     internal_properties : CAAAAAgAAAA2HB4CoZ6WmaZBgcKw9e0t5vmF1dGfDGVKTCVa6QaWYp5caBoQ6Yv4/zmjHeUb59kjIw==
+     physical_name : .\pForum.wwn
+     type : 65539
+   -
+     name : PAGE_Topic_Mobile
+     identifier : 0x4cebf0b1005ce2a9
+     internal_properties : CAAAAAgAAAB60KLmxYKqtbJtrW4MYlmRRtuF1dDjcAJ84aRU5QeVY4G9y6eEfScU20W/Ofn3g3Vf5w==
+     physical_name : .\PAGE_Topic_Mobile.wwh
+     type : 65538
+   -
+     name : PAGE_Rechercher
+     identifier : 0x491af1a500040b16
+     internal_properties : CAAAAAgAAABo5lBMeyCIk1xLj8yy6cuXYAc/J5GWieOKnODJ11LCDibY0DIO64n2+SOdG5tVLaNt9Q==
+     physical_name : .\PAGE_Rechercher.wwh
+     type : 65538
+   -
+     name : pWWOutils
+     identifier : 0x491b121b0001d90f
+     internal_properties : CAAAAAgAAAA9GRUJtuPL1OOeknMBaUjwJaT8JITCRTyqwLfIiYaUfHRMPsR/ehoJzHZgWNgI8OAoKA==
+     physical_name : .\pWWOutils.wdg
+     type : 7
+   -
+     name : MDL_Forum_Ambiance
+     identifier : 0x4c18e1c10022d57f
+     internal_properties : CAAAAAgAAAC/m5eLOGVNXmkYKPWLLBYi81w+vhmpu/KndtgBl4WJT7V774O9BKCPRvDq1l6SbmKqqg==
+     physical_name : .\MDL_Forum_Ambiance.wwt
+     type : 65541
+   -
+     name : MDL_Forum_Mobile
+     identifier : 0x4ca1c3dd00226f87
+     internal_properties : CAAAAAgAAAB3019DYN1VVmEAQA1zhb7aN5r2bm9sKGa20XJjCjJYmHxAJtxVrEg3Pvji3qZaJppi4g==
+     physical_name : .\MDL_Forum_Mobile.wwt
+     type : 65541
+   -
+     name : PAGE_Forum_Mobile
+     identifier : 0x4cebe39e005ad0ed
+     internal_properties : CAAAAAgAAADasIKGJWJKVRINTQ5s142lamlh+capX+x0A05VZMjMDMwWdgwknUc0O+Xf2VmXY1W/Rw==
+     physical_name : .\PAGE_Forum_Mobile.wwh
+     type : 65538
+   -
+     name : PAGE_EditerMessage_Mobile
+     identifier : 0x4cebf785009b8e25
+     internal_properties : CAAAAAgAAADwTih0s+jA2+SDl3QKppM3HA0L0+JV9vKhbTu8gavhJ+kpA/82gyEOwXtlU9MN9evVXQ==
+     physical_name : .\PAGE_EditerMessage_Mobile.wwh
+     type : 65538
+  other_elements :
+   -
+     physical_name : .\Description.rtf
+   -
+     physical_name : .\Description.gif
+  analysis : .\WW_Forum_PHP.ana\WW_Forum_PHP.wda
+  net_assemblies : []
+  uwp_api : []
+  external_components : []
+  internal_components : []
+ common_generation_directory : true
+ wb_skin : 170 Elegant
+ wb_color_palette : Gena & Light
+ site_type : 1
+ languages :
+  - fr-FR
+ wd_style_sheet : .\WW_Forum_Classic.sty
+ wb_style_sheet : .\WW_Forum_AWP.wws
+ site_map :
+  roots : []
+  orphans :
+   -
+     name : PAGE_Accueil
+     parameters : []
+   -
+     name : PAGE_Accueil_Mobile
+     parameters : []
+   -
+     name : PAGE_EditerForum
+     parameters : []
+   -
+     name : PAGE_EditerMembre
+     parameters : []
+   -
+     name : PAGE_EditerMessage
+     parameters : []
+   -
+     name : PAGE_EditerMessage_Mobile
+     parameters : []
+   -
+     name : PAGE_EditerTopic
+     parameters : []
+   -
+     name : PAGE_Forum
+     parameters : []
+   -
+     name : PAGE_Forum_Mobile
+     parameters : []
+   -
+     name : PAGE_Login
+     parameters : []
+   -
+     name : PAGE_Login_Mobile
+     parameters : []
+   -
+     name : PAGE_Membre
+     parameters : []
+   -
+     name : PAGE_Rechercher
+     parameters : []
+   -
+     name : PAGE_ResultatRecherche
+     parameters : []
+   -
+     name : PAGE_Topic
+     parameters : []
+   -
+     name : PAGE_Topic_Mobile
+     parameters : []
+ url_rewriting :
+  internal_properties : CAAAAAgAAADkPzcUdUUS7wCiun+MCjqYH70RJdzkSv/nRvXZ3ENdikMa6bcHtsAH
+ code_elements :
+  internal_properties : CAAAAAgAAAC77qWybsJIAzSjVm9gEGkluAQaDioKxaSjwW9FlCB5uDcB0Bz2cK7xxeySEE5m1iJu54Vl3dOrle+HYqCNNLvz4JN1LVTjG/6af929lnYQpiiifME1M0A2/EiOdh1PGkOydKz1kQnszB4QmhsJXEK8fOIIBzjRE5SjaEua6Qh2copqCcG80DiEbI/sRbAl0tf0rE1ZkGXx5ajv/o7ij5jZhkGMOdFF5R4yTrg852EONFRaJiX6mkxhFoy7xiXqdDmYS7pv+7t5PwajiBv2Ht6JLjNi+9nN3YmGo3P64T/bxSB0yqtPL7qIqMusL/IQ3m4WCfPOpwyVVO98ONF1WYpsHGF1KGpX2Qmzf3mQAGs9YYy2tg==
+  type_code : 0
+  p_codes :
+   -
+     internal_properties : CAAAAAgAAABp6Vkm9GRANLPHEykgI+4Qb5yqknEnC97vnKJjq60M+i2n14W0UoXw2hByhuEnNccPWKjZ7iGKJ01wMIxbXBh4BogOujHYdeY5upTlFTumjEZ7Gk7RVyi7FXLetkO1VGxo+oMUm4Wkha2QXATLWkw27x3xV5rXfPy5llYHsOUXqbw0ws/Y9icIV1mRD0EGBsU=
+     code : |1+
+      
+      // Variables globales
+      gnIDUtilisateur est un entier = -1
+      gsPagePrécédente est une chaine = "PAGE_Accueil"
+      gsQueryString est une chaine = ""
+      
+      
+      //Si on n'est pas en train de tester en mode "Déboguer le projet PHP en mode simulation", on se connecte à la base de données
+      //sinon on sera en HyperFileSQL Classic, pas besoin de code de connexion ...
+      SI EnModeSimulateurPHP() = Faux ALORS 
+      	
+      	//Connexion à la base de données ... 
+      	gcnxConnexionBaseDeDonnées est une Connexion
+      	
+      	//Spécifiez ci-dessous les paramètres de connexion à la base de données 
+      	//Ce peut être une base de données de type MySQL, Oracle ou PostGreSQL
+      	//Pour plus d'informations sur la manipulation des données en WEBDEV PHP, consultez l'aide en ligne 
+      	gcnxConnexionBaseDeDonnées..Serveur = "localhost"
+      	gcnxConnexionBaseDeDonnées..BaseDeDonnées = "forum"
+      	gcnxConnexionBaseDeDonnées..Utilisateur = "root"
+      	gcnxConnexionBaseDeDonnées..MotDePasse = ""
+      	gcnxConnexionBaseDeDonnées..Provider = hAccèsNatifMySQL // hAccèsNatifMySQL ou hAccèsNatifOracle ou hAccèsNatifPostgreSQL
+      	
+      	//
+      	//
+      	// Pour vous connecter en tant qu'administrateur sur le site, utilisez le compte : "Administrateur" avec le mot de passe "demo"
+      	//
+      	//
+      	
+      	
+      	// Ouverture de la connexion
+      	SI PAS HOuvreConnexion(gcnxConnexionBaseDeDonnées) ALORS
+      		FinProgramme("Connexion impossible à la base de données - Pour utiliser ce projet, il est nécessaire de spécifier,dans le code d'initialisation du projet, les paramètres de connexion à la base de données.")
+      	SINON
+      		HChangeConnexion("*",gcnxConnexionBaseDeDonnées)
+      		HCréationSiInexistant("*")
+      	FIN
+      FIN
+      
+      // Initialisation du compte Administrateur
+      InitialiseDonnées()
+     type : 196620
+   -
+     code : |1-
+      
+      // Déconnexion de l'utilisateur
+      UtilisateurDéconnecte()
+     type : 196610
+   -
+     type : 196621
+   -
+     type : 196627
+     enabled : false
+  orphans :
+   -
+     name : WW_Forum_PHP
+     identifier : 0x4c7d31c000208002
+     code_elements :
+      type_code : 159
+      p_codes : []
+ code_parameters :
+  internal_properties : CAAAAAgAAACVGQgYbalU7DKC3oH4ItDrjtcTHXXV/EuH8q0IbhyQlw==
+  original_name : WW_Forum_Classic
+rad :
+ internal_properties : CAAAAAgAAABhIL0UXeZmxDJxY3Xy0Q==
+project_explorer :
+ explorer_type : project
+ children :
+  -
+    explorer_type : pages
+    children :
+     -
+       name : Forum
+       explorer_type : custom_folder
+       children :
+        -
+          name : PAGE_EditerForum
+          explorer_type : element
+          type : 65538
+        -
+          name : Topic
+          explorer_type : custom_folder
+          children :
+           -
+             name : PAGE_EditerTopic
+             explorer_type : element
+             type : 65538
+           -
+             name : PAGE_Topic
+             explorer_type : element
+             type : 65538
+           -
+             name : Message
+             explorer_type : custom_folder
+             children :
+              -
+                name : PAGE_EditerMessage
+                explorer_type : element
+                type : 65538
+        -
+          name : PAGE_Forum
+          explorer_type : element
+          type : 65538
+     -
+       name : Membres
+       explorer_type : custom_folder
+       children :
+        -
+          name : PAGE_Login
+          explorer_type : element
+          type : 65538
+        -
+          name : PAGE_Membre
+          explorer_type : element
+          type : 65538
+        -
+          name : PAGE_EditerMembre
+          explorer_type : element
+          type : 65538
+     -
+       name : Recherche
+       explorer_type : custom_folder
+       children :
+        -
+          name : PAGE_Rechercher
+          explorer_type : element
+          type : 65538
+        -
+          name : PAGE_ResultatRecherche
+          explorer_type : element
+          type : 65538
+     -
+       name : Mobile
+       explorer_type : custom_folder
+       children :
+        -
+          name : PAGE_Accueil_Mobile
+          explorer_type : element
+          type : 65538
+        -
+          name : PAGE_Login_Mobile
+          explorer_type : element
+          type : 65538
+        -
+          name : PAGE_Forum_Mobile
+          explorer_type : element
+          type : 65538
+        -
+          name : PAGE_Topic_Mobile
+          explorer_type : element
+          type : 65538
+        -
+          name : PAGE_EditerMessage_Mobile
+          explorer_type : element
+          type : 65538
+resources :
+ string_res :
+  identifier : 0x0
+  internal_properties : CAAAAAgAAACm76HWfKGWp33VjXInA4cRlqArlgTTA862QGt72W2ld5Y=
+  strings :
+   -
+     text :
+      fr-FR : "*"
+     index : 0
+   -
+     text :
+      fr-FR : New
+     index : 1
+   -
+     text :
+      fr-FR : Mod
+     index : 2
+   -
+     text :
+      fr-FR : info@forum-webdev.net
+     index : 3
+   -
+     text :
+      fr-FR : Administrateur
+     index : 4
+   -
+     text :
+      fr-FR : demo
+     index : 5
+   -
+     text :
+      fr-FR : "19800101000000"
+     index : 6
+   -
+     text :
+      fr-FR : "<font size=\"2\"><span style=\"font-family: Arial,Helvetica,sans-serif;\">WEBDEV : Forums, réalisés avec <span style=\"font-weight: bold;\">WEBDEV </span>de PC SOFT. \r\n</span></font> "
+     index : 7
+   -
+     text :
+      fr-FR : "HAjoute,HSupprime"
+     index : 8
+custom_note :
+ internal_properties : CAAAAAgAAAAd98VSJfHHqE3P0QHwrwdhn7ig8dWBR6valpUTgnAMTVXiDg==

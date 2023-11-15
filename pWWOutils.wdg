@@ -1,0 +1,204 @@
+#To edit and compare internal_properties, use WINDEV integrated tools.
+#Internal properties refer to the properties of controls in windows, reports, etc.
+info :
+ name : pWWOutils
+ major_version : 28
+ minor_version : 0
+ type : 7
+ description : ""
+ subtype : 0
+procedure_set :
+ identifier : 0x191b121b005dd90f
+ internal_properties : CAAAAAgAAABGLu41kG7fjQV3iS4F72qmnKaNh5694reolNKIW0iw
+ code_elements :
+  internal_properties : CAAAAAgAAAC956tWUU4Zd2/Cpyha7nRxCWs+orPtNleasV+hr4Q9Bct4YmF8vOMoFU5GVmt8zR8gBLQgmR7/Vzu1PPQFIWAZrwfN8O6C7WXPQ8UX/8U+K8J3271eQEUlA2gw9nrZP2kn5DvIu07umj0QAVo=
+  type_code : 31
+  p_codes :
+   -
+     code : |1-
+      
+     type : 720896
+  procedures :
+   -
+     name : RecupérerListeTerme
+     procedure_id : 1809060299758593477
+     type_code : 15
+     code : |1-
+      //
+      // Résumé : Découpe un liste de termes brut et les sépare par des RC
+      // Syntaxe :
+      //[ <Résultat> = ] RecupérerListeTerme (<sListeTerme> est chaîne)//
+      // Paramètres :
+      //	sListeTerme (chaîne) : la liste de termes à l'état brut
+      // Valeur de retour :
+      // 	chaîne : // 	Renvoi la liste des termes séparées par RC
+      //
+      // Exemple :
+      // Indiquez ici un exemple d'utilisation.
+      //
+      PROCEDURE PUBLIQUE  RecupérerListeTerme(sListeTerme est une chaine)
+      
+      // Variable
+      sTempTerme            est une chaine
+      sListeFinale          est une chaine
+      bMotTerminé           est un booléen
+      bTermeCombine         est un booléen
+      bEncoursTermeCombiné  est un booléen
+      
+      // Initialisation
+      bTermeCombine = Faux
+      bEncoursTermeCombiné = Faux
+      
+      //  Mise en forme de la liste des termes
+      POUR nIndice=1 _A_ Taille(sListeTerme)
+      	// Caractère à prendre ?
+      	SI (sListeTerme[[nIndice]] <> " ") ALORS
+      		// Fin d'unTerme combiné ?
+      		SI sListeTerme[[nIndice]] = """" ET bEncoursTermeCombiné = Vrai ALORS
+      			bEncoursTermeCombiné = Faux
+      			// Début d'un terme combiné ?
+      		SINON SI sListeTerme[[nIndice]] = """" ET bTermeCombine = Faux ALORS
+      			bTermeCombine = Vrai	
+      			bEncoursTermeCombiné = Vrai
+      		SINON		
+      			// Récupération du terme
+      			sTempTerme += sListeTerme[[nIndice]]
+      			bMotTerminé = Faux
+      		FIN
+      		// Si c'est la fin d'un terme ou d'un mot, concaténation à la liste 
+      	SINON SI bMotTerminé = Faux ET bEncoursTermeCombiné = Faux
+      		// Concaténation du terme
+      		sListeFinale += sTempTerme + RC
+      		
+      		// RAZ des variables
+      		bTermeCombine = Faux
+      		sTempTerme = ""
+      		bMotTerminé = Vrai
+      	SINON
+      		// Cas d'un espace dans un terme combiné : il faut le prendre
+      		sTempTerme += sListeTerme[[nIndice]]
+      	FIN
+      FIN
+      
+      // Ajout du dernier terme
+      SI sTempTerme <> "" ALORS
+      	sListeFinale += sTempTerme + RC
+      FIN
+      
+      RENVOYER sListeFinale
+     type : 458752
+   -
+     name : VerifierEmail
+     procedure_id : 1821659539218752270
+     type_code : 15
+     code : |1+
+      // Résumé : Vérifie que l'utilisateur a saisi un format de mail valide
+      // Syntaxe :
+      //[ <Résultat> = ] VerifEmail (<sEmail>)
+      //
+      // Paramètres :
+      //	sEmail : l'adresse mail saisie par l'utilisateur
+      // Valeur de retour :
+      // 	Booléen : Vrai si l'adresse est valide
+      //
+      
+      PROCEDURE VerifierEmail(sEmail)
+      
+      // on vérifie que l'utilisateur a saisi un format de mail valide
+      // renvoie 1 si format correct, 0 sinon 
+      
+      nLongAro		est un entier       // position de @
+      nLongLastPoint 	est un entier 		// position du dernier point
+      sUtilisateur  	est une chaine    	// ce qui est avant le @
+      sServeur	 	est une chaine    	// ce qui est entre le @ et le dernier point
+      sPays         	est une chaine    	// ce qui est après le dernier point
+      
+      // position de @ 
+      nLongAro = Position(sEmail,"@")
+      // pas de @
+      SI PAS nLongAro ALORS RENVOYER Faux
+      // plusieurs @
+      SI Position(sEmail[[nLongAro+1 A Taille(sEmail)]], "@")<>0 ALORS RENVOYER 0
+      
+      // calcul de la position du dernier point
+      i est un entier =1
+      // on cherche le dernier point de la chaine située après @
+      TANTQUE ExtraitChaîne(sEmail[[nLongAro+1 A Taille(sEmail)]], i, ".") <> EOT
+      	sPays=ExtraitChaîne(sEmail[[nLongAro+1 A Taille(sEmail)]], i, ".")
+      	i++
+      FIN
+      // pas de .
+      SI i=1 ALORS RENVOYER Faux
+      // position du dernier point
+      nLongLastPoint=Taille(sEmail)-Taille(sPays)
+      
+      // on extrait la partie utilisateur  
+      sUtilisateur = sEmail[[1 A nLongAro -1]]
+      // on extrait la partie serveur
+      sServeur	= sEmail[[nLongAro+1 A nLongLastPoint-1]]
+      
+      SI (Taille(sUtilisateur) = 0 OU Taille(sServeur) = 0) ALORS 
+      	RENVOYER Faux
+      FIN
+      
+      SI (Taille(sPays) <2 OU Taille(sPays) >3) ALORS
+      	RENVOYER Faux
+      FIN
+      
+      RENVOYER Vrai
+      
+      
+     type : 458752
+   -
+     name : fRepAvatars
+     procedure_id : 2068039960065400936
+     type_code : 15
+     code : |1-
+      // Résumé : Renvoie le répertoire où sont stockés les avatars
+      // Syntaxe :
+      //[ <Résultat> = ] fRepAvatars ()
+      //
+      // Paramètres :
+      //	Aucun
+      // Valeur de retour :
+      // 	chaîne : Le répertoire où sont stockés les avatars
+      //
+      // Exemple :
+      // Indiquez ici un exemple d'utilisation.
+      //
+      PROCEDURE fRepAvatars()
+      
+      RENVOYER fRepWeb() + ["/"] + "../images/avatar"
+     type : 458752
+   -
+     name : fRepAvatarsTemp
+     procedure_id : 2068040316547703773
+     type_code : 15
+     code : |1-
+      // Résumé : Renvoie le répertoire où sont stockés les avatars temporaires
+      // Syntaxe :
+      //[ <Résultat> = ] fRepAvatarsTemp ()
+      //
+      // Paramètres :
+      //	Aucun
+      // Valeur de retour :
+      // 	chaîne : Le répertoire où sont stockés les avatars temporaires
+      //
+      // Exemple :
+      // Indiquez ici un exemple d'utilisation.
+      //
+      PROCEDURE fRepAvatarsTemp()
+      
+      RENVOYER fRepWeb() + ["/"] + "../avatar"
+     type : 458752
+  procedure_templates : []
+  property_templates : []
+ code_parameters :
+  internal_properties : CAAAAAgAAACVGQgYbalU7DKC3oH4ItDrjtcTHXXV/EuH8q0IbhyQlw==
+  original_name : COL_Collection1
+resources :
+ string_res :
+  identifier : 0x1fe1bf6b0024a22e
+  internal_properties : CAAAAAgAAACm76HWfKGWp33VjXInA4cRlqArlgTTA862QGt72W2ld5Y=
+custom_note :
+ internal_properties : CAAAAAgAAABtB9HWVzrXO2+4NDRVK0vmzaNKrCKqH1DBX30lMmGZ
